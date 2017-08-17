@@ -1,0 +1,15 @@
+[user]
+	name = 212616315
+	email = john.lund@ge.com
+[core]
+	excludesfile = /Users/johnlund/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
+	path = 
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL --output $MERGED
+	trustExitCode = true
+[commit]
+	template = /Users/johnlund/.stCommitMsg
+[cola]
+	spellcheck = false

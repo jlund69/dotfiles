@@ -1,0 +1,5 @@
+[client]
+user = logread
+password = logread
+host = cihcisdapp835
+port = 6612
