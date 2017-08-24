@@ -69,8 +69,8 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 source ~/.scripts/tabFunc.sh
 
-# make sure ssh-agent has our key
-if [ ! `ssh-add -l | cut -d " " -f 3 | grep johnlund` == "/Users/johnlund/.ssh/id_rsa" ]; then
+# make sure ssh-agent has our keys
+if ! [ "`ssh-add -l | cut -d ' ' -f 3 | grep johnlund`" == "/Users/johnlund/.ssh/id_rsa" ]; then
     ssh-add ~/.ssh/id_rsa
     ssh-add ~/.ssh/azure.private.azure1.pem
 fi
