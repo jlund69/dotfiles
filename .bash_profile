@@ -70,9 +70,14 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 source ~/.scripts/tabFunc.sh
 
 # make sure ssh-agent has our keys
-if ! [ "`ssh-add -l | cut -d ' ' -f 3 | grep johnlund`" == "/Users/johnlund/.ssh/id_rsa" ]; then
+ssh-add -l &> /dev/null
+if [ "$?" == 1 ]; then
     ssh-add ~/.ssh/id_rsa
     ssh-add ~/.ssh/azure.private.azure1.pem
+fi
+ssh-add -l &> /dev/null
+if [ "$?" == 2 ];then
+    echo "There is no ssh-agent running"
 fi
 
 # virtualenv
@@ -93,3 +98,7 @@ exit() {
 }
 
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+export PATH=$PATH:/Users/johnlund/bin
+
+source '/Users/johnlund/lib/azure-cli/az.completion'
