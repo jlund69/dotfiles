@@ -102,3 +102,4 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PATH=$PATH:/Users/johnlund/bin
 
 source '/Users/johnlund/lib/azure-cli/az.completion'
+source /Users/johnlund/lib/toggleproxy.sh
