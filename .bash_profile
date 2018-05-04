@@ -1,5 +1,19 @@
+# figure out if we are in an interactive shell for use later
+[[ $- == *i* ]] && Interactive='true' || Interactive='false'
+
+if $Interactive == 'true'; then
 cowsay $(fortune -a)
 eval "$(thefuck --alias)"
+
+# virtualenv
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+export WORKON_HOME=~/virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+alias noenv='deactivate'
+# autoenv
+source /usr/local/opt/autoenv/activate.sh
+
+fi #end if $Interactive == 'true'
 
 # Setup tab and window title functions for iterm2
 # iterm behaviour: until window name is explicitly set, it'll always track tab title.
@@ -15,7 +29,7 @@ iterm_tab () { set_iterm_name 1 $@; }
 iterm_window () { set_iterm_name 2 $@; }
 
 ## export ENV settings
-export EDITOR=usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 export BLOCKSIZE=1k
 export PS1="\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ "
 export NVM_DIR="$HOME/.nvm"
@@ -40,6 +54,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 alias ls='ls -G'
 
 # aliases go here
+alias aws='/Users/johnlund/Library/Python/3.6/bin/aws'
 alias ll='ls -FGlAhp'
 alias mkdir='mkdir -pv'
 alias less='less -FSRXc'
@@ -48,6 +63,7 @@ alias rd='rdesktop -r scard -g 1280x800 -a 16 -z -P'
 alias myrs='rsync -varE --progress'
 alias usego='export PATH="$PATH:/usr/local/opt/go/libexec/bin"'
 alias useopenssl='export PATH="/usr/local/opt/openssl/bin:$PATH"'
+alias usecode='PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
 alias myproxy='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 #alias sftp='with-readline sftp'
@@ -64,29 +80,17 @@ shopt -s histappend
 shopt -s cmdhist
 shopt -s histverify
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-source ~/.scripts/tabFunc.sh
-
 # make sure ssh-agent has our keys
 ssh-add -l &> /dev/null
 if [ "$?" == 1 ]; then
     ssh-add ~/.ssh/id_rsa
-    ssh-add ~/.ssh/azure.private.azure1.pem
+    # removing 20180418 errors loading key - keylength
+    #ssh-add ~/.ssh/azure.private.azure1.pem
 fi
 ssh-add -l &> /dev/null
 if [ "$?" == 2 ];then
     echo "There is no ssh-agent running"
 fi
-
-# virtualenv
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
-export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-alias noenv='deactivate'
-# autoenv
-source /usr/local/opt/autoenv/activate.sh
 
 # adding this to make sure I don't accidentally exit macOS sessions
 exit() {
@@ -97,9 +101,15 @@ exit() {
     esac
 }
 
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+if $Interactive == 'true'; then
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export PATH=$PATH:/Users/johnlund/bin
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+source ~/.scripts/tabFunc.sh
 source '/Users/johnlund/lib/azure-cli/az.completion'
 source /Users/johnlund/lib/toggleproxy.sh
+fi #end if $Interactive == 'true'
