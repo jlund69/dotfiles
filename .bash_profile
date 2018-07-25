@@ -28,10 +28,23 @@ iterm_both () { set_iterm_name 0 $@; }
 iterm_tab () { set_iterm_name 1 $@; }
 iterm_window () { set_iterm_name 2 $@; }
 
+# for git
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWCOLORHINTS=true
+#if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+#__GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+#source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+#fi
+
 ## export ENV settings
 export EDITOR=/usr/local/bin/vim
 export BLOCKSIZE=1k
-export PS1="\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ "
+#export PS1="\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ "
+export PS1='\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\033[31m$(__git_ps1)\033[00m\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ '
 export NVM_DIR="$HOME/.nvm"
 
 # uncomment for external programs that need proxy access:
@@ -58,12 +71,12 @@ alias aws='/Users/johnlund/Library/Python/3.6/bin/aws'
 alias ll='ls -FGlAhp'
 alias mkdir='mkdir -pv'
 alias less='less -FSRXc'
-alias brew='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80 brew'
+# alias brew='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80 brew'
 alias rd='rdesktop -r scard -g 1280x800 -a 16 -z -P'
 alias myrs='rsync -varE --progress'
 alias usego='export PATH="$PATH:/usr/local/opt/go/libexec/bin"'
 alias useopenssl='export PATH="/usr/local/opt/openssl/bin:$PATH"'
-alias usecode='PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
+alias usecode='PATH="$PATH:~/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
 alias myproxy='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 #alias sftp='with-readline sftp'
@@ -113,3 +126,7 @@ source ~/.scripts/tabFunc.sh
 source '/Users/johnlund/lib/azure-cli/az.completion'
 source /Users/johnlund/lib/toggleproxy.sh
 fi #end if $Interactive == 'true'
+
+# The next lines enable bash completion for scalr-ctl.
+export PATH=$PATH:/Users/johnlund/Library/Python/2.7/bin
+eval "$(_SCALR_CTL_COMPLETE=source scalr-ctl)"

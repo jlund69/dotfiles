@@ -103,6 +103,12 @@ alpcispapp698v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp699v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp747v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
+[prod-forms-https]
+alpcispapp121v.corporate.ge.com
+alpcispapp122v.corporate.ge.com
+alpcispapp123v.corporate.ge.com
+
+
 [prod-gatekeeper]
 alpcispapp706v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp707v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
@@ -271,6 +277,7 @@ cssyimuscingh10a-v.gdn.ge.com
 dev-forms
 stage-forms
 prod-forms
+prod-forms-https    
 
 
 [jenkins]
@@ -282,3 +289,16 @@ cihcisdapp835.corporate.ge.com ansible_python_interpreter=/usr/local/bin/python2
 
 [gitlab]
 alpcispapp970v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+
+[cloud-gitlab-stage]
+10.228.193.88
+
+[cloud-gitlab-prod]
+10.228.200.5
+
+[cloud-gitlab:children]
+cloud-gitlab-stage
+cloud-gitlab-prod
+
+[dev-oneform-wf]
+cihcisdappa29v
