@@ -302,3 +302,12 @@ cloud-gitlab-prod
 
 [dev-oneform-wf]
 cihcisdappa29v
+
+[prod-myge]
+10.229.83.110
+10.229.84.196
+10.229.80.109
+
+[stage-myge]
+10.227.87.123
+

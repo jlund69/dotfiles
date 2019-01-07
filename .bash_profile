@@ -5,6 +5,12 @@ if $Interactive == 'true'; then
 cowsay $(fortune -a)
 eval "$(thefuck --alias)"
 
+# Homebrew
+export HOMEBREW_UPGRADE_CLEANUP=1
+
+# rbenv
+eval "$(rbenv init -)"
+
 # virtualenv
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 export WORKON_HOME=~/virtualenvs
