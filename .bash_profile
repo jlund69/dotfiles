@@ -6,7 +6,7 @@ cowsay $(fortune -a)
 eval "$(thefuck --alias)"
 
 # Homebrew
-export HOMEBREW_UPGRADE_CLEANUP=1
+# export HOMEBREW_UPGRADE_CLEANUP=1
 
 # rbenv
 eval "$(rbenv init -)"
@@ -46,12 +46,47 @@ GIT_PS1_SHOWCOLORHINTS=true
 #source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 #fi
 
+function iterm2_print_user_vars() {
+  iterm2_set_user_var gitStatus "$(getGitStatus)"
+}
+
+function getGitStatus {
+  if [[ $(git status 2> /dev/null) = "" ]]; then
+    echo "$(topDir)"
+  else
+    echo "$(getGitProjectDir)$(topDir) git:($(getGitBranch))$(isGitBranchDirty)"
+  fi
+}
+
+function getGitProjectDir {
+  basename $(git rev-parse --show-toplevel 2> /dev/null ) 2> /dev/null
+}
+
+function topDir {
+  if [[ $(basename $(pwd)) = $(getGitProjectDir) ]]; then
+   echo ""
+  else
+   echo "/$(basename $(pwd))"
+  fi
+}
+
+function getGitBranch {
+  basename $(git branch 2> /dev/null | grep \* | cut -c3-) 2> /dev/null
+}
+
+function isGitBranchDirty {
+  [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "⚡ "
+}
+
 ## export ENV settings
+export LSCOLORS="EHfxcxdxBxegecabagacad"
 export EDITOR=/usr/local/bin/vim
 export BLOCKSIZE=1k
 #export PS1="\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ "
-export PS1='\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[34m\]\h\[\e[m\]:\[\e[32m\]\w\033[31m$(__git_ps1)\033[00m\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ '
+export PS1='\e]2;\u@\h:\w\a\e]1;\W\a\[\e[33m\]\d \t \[\e[38;5;14m\]\u@\[\e[35m\]\h\[\e[m\]:\[\e[32m\]\w\033[31m$(__git_ps1)\033[00m\n\[\e[m\]\[\e[33;40m\]\[\e[m\]\\$ '
 export NVM_DIR="$HOME/.nvm"
+export SSO_ID='212616315'
+export VAULT_ADDR="https://dwt-vault.cloud.corporate.ge.com:443"
 
 # uncomment for external programs that need proxy access:
 #export ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80
@@ -80,6 +115,7 @@ alias less='less -FSRXc'
 # alias brew='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80 brew'
 alias rd='rdesktop -r scard -g 1280x800 -a 16 -z -P'
 alias myrs='rsync -varE --progress'
+alias addsbin='export PATH="/usr/local/sbin:$PATH"'
 alias usego='export PATH="$PATH:/usr/local/opt/go/libexec/bin"'
 alias useopenssl='export PATH="/usr/local/opt/openssl/bin:$PATH"'
 alias usecode='PATH="$PATH:~/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
@@ -88,13 +124,15 @@ alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.cor
 #alias sftp='with-readline sftp'
 alias tac='gtac'
 alias cdp='pushd'
+alias vault-login="vault login -method=ldap username=$GE_SSO_ID"
 
 # history settings go here
 export HISTFILESIZE=
 export HISTSIZE=
-export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE='rm *:ls:[bf]g:history:exit:ll:pwd:clear:mount'
+export HISTCONTROL=erasedups:ignoreboth
+export HISTIGNORE='brew update:ls:[bf]g:history:exit:ll:pwd:clear:mount:rm *'
 export HISTFILE=~/.bash_eternal_history
+export HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 shopt -s cmdhist
 shopt -s histverify
@@ -129,8 +167,13 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 source ~/.scripts/tabFunc.sh
-source '/Users/johnlund/lib/azure-cli/az.completion'
+#source '/Users/johnlund/lib/azure-cli/az.completion'
 source /Users/johnlund/lib/toggleproxy.sh
+for file in `ls -A1 /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/geix*`
+do
+  source $file
+done
+source /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/togglegeix
 fi #end if $Interactive == 'true'
 
 # The next lines enable bash completion for scalr-ctl.
