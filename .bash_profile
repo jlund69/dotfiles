@@ -38,6 +38,8 @@ iterm_window () { set_iterm_name 2 $@; }
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
     source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+    source $(brew --prefix)/etc/bash_completion.d/docker
+    source $(brew --prefix)/etc/bash_completion.d/git-flow-completion.bash
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
@@ -118,7 +120,8 @@ alias myrs='rsync -varE --progress'
 alias addsbin='export PATH="/usr/local/sbin:$PATH"'
 alias usego='export PATH="$PATH:/usr/local/opt/go/libexec/bin"'
 alias useopenssl='export PATH="/usr/local/opt/openssl/bin:$PATH"'
-alias usecode='PATH="$PATH:~/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
+alias usecode='PATH="
+$PATH:~/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
 alias myproxy='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
 #alias sftp='with-readline sftp'
@@ -169,7 +172,7 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 source ~/.scripts/tabFunc.sh
 #source '/Users/johnlund/lib/azure-cli/az.completion'
 source /Users/johnlund/lib/toggleproxy.sh
-for file in `ls -A1 /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/geix*`
+for file in `find /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions -type f -name geix*`
 do
   source $file
 done

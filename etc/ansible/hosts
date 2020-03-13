@@ -1,6 +1,3 @@
-[patrick]
-3.150.96.94
-
 [prod-communities-consumers]
 alpcispapp836v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp837v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
@@ -277,15 +274,21 @@ cssyimuscingh10a-v.gdn.ge.com
 dev-forms
 stage-forms
 prod-forms
-prod-forms-https    
+prod-forms-https
 
+[jenkins:children]
+jenkins-masters
+jenkins-agents
 
-[jenkins]
+[jenkins-masters]
 cihcispapp925.corporate.ge.com dns_entry=jenkins.dbt.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcisdapp809v.corporate.ge.com dns_entry=stage.jenkins.dbt.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-#stage & prod jenkins slave 1
-cihcisdapp835.corporate.ge.com ansible_python_interpreter=/usr/local/bin/python2.6
 #jenkins.cloud.corporate.ge.com
+
+[jenkins-agents]
+alpcispapp122v.corporate.ge.com
+alpcispapp121v.corporate.ge.com
+
 
 [gitlab]
 alpcispapp970v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
