@@ -3,5 +3,6 @@ user = logread
 password = logread
 #host = cihcisdapp835
 #Use this if on VPN.  Possibly more up to date
-host = dwt-devops-db.cpzqznyepv9i.us-east-1.rds.amazonaws.com
+#host = dwt-devops-db.cpzqznyepv9i.us-east-1.rds.amazonaws.com
+host = dwt-devops-encrypt-rds-prod.c5cagt7ho4ss.us-east-1.rds.amazonaws.com
 # port = 6612

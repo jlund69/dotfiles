@@ -1,3 +1,4 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
 # figure out if we are in an interactive shell for use later
 [[ $- == *i* ]] && Interactive='true' || Interactive='false'
 
@@ -12,13 +13,15 @@ eval "$(thefuck --alias)"
 eval "$(rbenv init -)"
 
 # virtualenv
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
-export WORKON_HOME=~/virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-alias noenv='deactivate'
+# set -x
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+# export WORKON_HOME=~/virtualenvs
+# export PROJECT_HOME=~/git/cloud
+# source /usr/local/bin/virtualenvwrapper.sh
+# alias noenv='deactivate'
 # autoenv
-source /usr/local/opt/autoenv/activate.sh
-
+# source /usr/local/opt/autoenv/activate.sh
+# set +x
 fi #end if $Interactive == 'true'
 
 # Setup tab and window title functions for iterm2
@@ -128,6 +131,8 @@ alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.cor
 alias tac='gtac'
 alias cdp='pushd'
 alias vault-login="vault login -method=ldap username=$GE_SSO_ID"
+alias ws='/Applications/Wireshark.app/Contents/MacOS/wireshark'
+alias wireshark='/Applications/Wireshark.app/Contents/MacOS/wireshark'
 
 # history settings go here
 export HISTFILESIZE=

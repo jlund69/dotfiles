@@ -1,128 +1,135 @@
-[prod-communities-consumers]
+[prod_communities_consumers]
 alpcispapp836v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp837v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp838v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
 
 [elk]
-10.227.80.82
-10.227.84.156
+# 10.227.80.82
+# 10.227.84.156
 
 [nifi]
-10.229.87.217  host_id=1
-10.229.80.245  host_id=2
-10.229.84.89   host_id=3
+# 10.229.87.217  host_id=1
+# 10.229.80.245  host_id=2
+# 10.229.84.89   host_id=3
 
-[dev-forms]
+[dev_forms]
 cihcisdapp772v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[dev-libraries]
+[dev_libraries]
 cihcisdapp776v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[dev-sc]
-cihcisdweba28v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+[dev_sc]
+# cihcisdweba28v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[dev-wf]
+[dev_wf]
 cihcisdappa29v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[ige-asia]
+[ige_asia]
 sincispapp301v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 sincispapp304v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[ige-eu]
+[ige_eu]
 loncispweb316v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 loncispweb317v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
 [ige:children]
-ige-asia
-ige-eu
+ige_asia
+ige_eu
 
 [monit]
-cihcissapp990.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+cihcissapp990.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-monit]
+[stage_monit]
 cihcisdapp809v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
 [puppet]
 alpcispapp981v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
-[sandbox-libraries]
-cihcisdapp950v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# [sandbox_libraries]
+# cihcisdapp950v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[sandbox-mashups]
-gis01036.devcloud.ge.com ansible_python_interpreter=/usr/bin/python26
+[sandbox_mashups]
+# gis01036.devcloud.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[sandbox-wf]
-gis01036.devcloud.ge.com ansible_python_interpreter=/usr/bin/python26
+[sandbox_wf]
+# gis01036.devcloud.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[dev-mashups]
+[dev_mashups]
 cihcisdapp772v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-forms]
+[stage_forms]
 cihcissapp844v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissapp845v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-forms-nextgen]
+[stage_forms_nextgen]
 alpctspappa158v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 alpctspappa159v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
-[stage-gatekeeper]
-cihcissapp915v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-cihcissapp916v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-cihcissapp917v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+[stage_gatekeeper]
+# cihcissapp915v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# cihcissapp916v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# cihcissapp917v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-libraries]
+[stage_libraries]
 cihcissapp777v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissapp778v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-#cihcissapp905v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# cihcissapp905v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-libraries:children]
-stage-libraries-svcs
+[stage_libraries:children]
+stage_libraries_svcs
+dev_libraries
 
-[stage-libraries-svcs]
+[stage_libraries_svcs]
 cihcispapp988v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissapp895v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
-[secure-stage-libraries]
-cihcissapp904v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+[secure_stage_libraries]
+# cihcissapp904v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-mashups]
+[stage_mashups]
 cihcissapp844v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissapp845v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-wf]
+[stage_search]
+# cihcissapp646.corporate.ge.com
+# cihcissapp647.corporate.ge.com
+# cihcissapp648.corporate.ge.com
+# cihcissweb645v.corporate.ge.com
+
+[stage_wf]
 cihcissappa30v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissappa31v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcissappa32v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-forms]
+[prod_forms]
 alpcispapp698v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp699v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp747v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-forms-https]
-alpcispapp121v.corporate.ge.com
-alpcispapp122v.corporate.ge.com
-alpcispapp123v.corporate.ge.com
+[prod_forms_https]
+alpcispapp121v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+alpcispapp122v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+alpcispapp123v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
 
-[prod-gatekeeper]
+[prod_gatekeeper]
 alpcispapp706v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp707v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp708v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-gw2box]
+[stage_gw2box]
 alpcissmq831v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-gw2box]
+[prod_gw2box]
 cihcispapp925.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcispapp926.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
 [gw2box:children]
-stage-gw2box
-prod-gw2box
+stage_gw2box
+prod_gw2box
 
-[prod-libraries-int]
+[prod_libraries_int]
 alpcispapp790v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp791v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp654v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
@@ -130,162 +137,175 @@ alpcispapp655v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp656v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 #alpcispapp657v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-libraries-ext]
+[prod_libraries_ext]
 alpcispapp658v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp659v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-libraries-sec]
+[prod_libraries_sec]
 #alpcispapp660v.corporate.ge.com
 #alpcispapp661v.corporate.ge.com
 
-[prod-libraries-revproxy]
+[prod_libraries_revproxy]
 #alpcispweb757v.corporate.ge.com
 #alpcispweb758v.corporate.ge.com
 
-[prod-libraries-svcs]
+[prod_libraries_svcs]
 alpcispapp988v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp842v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-libraries-box]
+[prod_libraries_box]
 alpcispweba48v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispweba49v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispweba50v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispweba51v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-libraries-web]
+[prod_libraries_web]
 alpcispapp790v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp791v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp654v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp656v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp655v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-libraries:children]
-prod-libraries-box
-prod-libraries-ext
-prod-libraries-int
-prod-libraries-sec
-prod-libraries-svcs
-prod-libraries-revproxy
+[prod_libraries:children]
+prod_libraries_box
+prod_libraries_ext
+prod_libraries_int
+prod_libraries_sec
+prod_libraries_svcs
+prod_libraries_revproxy
 
 [libraries:children]
-prod-libraries
-stage-libraries
-dev-libraries
-sandbox-libraries
+prod_libraries
+stage_libraries
+dev_libraries
+# sandbox_libraries
 
-[prod-mashups]
+[prod_mashups]
 alpcispapp698v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp699v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp747v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-wf]
+[prod_wf]
 alpcispapp836v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp837v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp838v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-lib]
+[prod_lib]
 alpcispapp988v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 alpcispapp842v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
 [mashups:children]
-sandbox-mashups
-dev-mashups
-stage-mashups
-prod-mashups
+sandbox_mashups
+dev_mashups
+stage_mashups
+prod_mashups
 
 [wf:children]
-sandbox-wf
-dev-wf
-stage-wf
-prod-wf
+sandbox_wf
+dev_wf
+stage_wf
+prod_wf
 
-[stage-turbine-riak]
-alpcissdb825v ansible_python_interpreter=/usr/bin/python2.6
-alpcissdb826v ansible_python_interpreter=/usr/bin/python2.6
-alpcissdb827v ansible_python_interpreter=/usr/bin/python2.6
+[stage_turbine_riak]
+# alpcissdb825v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+# alpcissdb826v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+# alpcissdb827v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
-[stage-turbine-dw]
-alpcissapp828v ansible_python_interpreter=/bin/python
-alpcissapp829v ansible_python_interpreter=/bin/python
-alpcissapp830v ansible_python_interpreter=/bin/python
+[stage_turbine_dw]
+# alpcissapp828v.corporate.ge.com ansible_python_interpreter=/bin/python
+# alpcissapp829v.corporate.ge.com ansible_python_interpreter=/bin/python
+# alpcissapp830v.corporate.ge.com ansible_python_interpreter=/bin/python
 
-[stage-turbine-mq]
-alpcissmq831v ansible_python_interpreter=/usr/bin/python26
-alpcissmq832v ansible_python_interpreter=/usr/bin/python26
-alpcissmq833v ansible_python_interpreter=/usr/bin/python26
+[stage_turbine_mq]
+alpcissmq831v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq832v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq833v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[stage-turbine:children]
-stage-turbine-riak
-stage-turbine-dw
-stage-turbine-mq
+[stage_turbine:children]
+stage_turbine_riak
+stage_turbine_dw
+stage_turbine_mq
 
-[prod-turbine-alp]
-alpcispapp819v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-alpcispapp820v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
-alpcispapp821v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+[prod_turbine_alp]
+# alpcispapp819v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# alpcispapp820v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# alpcispapp821v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-turbine-cih]
+[prod_turbine_cih]
 cihcispmqa24v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcispmqa25v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcispmqa26v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-turbine-aws]
-10.229.81.12
-10.229.82.12
-10.229.83.171
-10.229.84.8
-10.229.86.237
-10.229.86.50
+[mq_alp]
+alpcispmq822v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispmq823v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispmq824v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq831v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq832v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq833v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcissmq831v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+
+[mq:children]
+prod_turbine_cih
+mq_alp
+
+[prod_turbine_aws]
+# 10.229.81.12
+# 10.229.82.12
+# 10.229.83.171
+# 10.229.84.8
+# 10.229.86.237
+# 10.229.86.50
 
 
-[dev-turbine]
-alpcisdapp841c.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+[dev_turbine]
+# alpcisdapp841c.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 
-[prod-turbine:children]
-prod-turbine-cih
-prod-turbine-alp
+[prod_turbine:children]
+prod_turbine_cih
+prod_turbine_alp
 
 [turbine:children]
-prod-turbine
-dev-turbine
+prod_turbine
+dev_turbine
 
-[dev-sc-lib:children]
-dev-forms
-dev-libraries
-dev-sc
-dev-wf
+[dev_sc_lib:children]
+dev_forms
+dev_libraries
+dev_sc
+dev_wf
 puppet
 
-[f5:children]
-f5-alp
-f5-cin
+# [f5:children]
+# f5_alp
+# f5_cin
 
-[f5-alp]
-cssydmusalpdc06-v01.gdn.ge.com
-cssydmusalpdc06-v02.gdn.ge.com
-CSSyiMUSalpdc10a-v.gdn.ge.com
+# [f5_alp]
+# # cssydmusalpdc06-v01.gdn.ge.com
+# # cssydmusalpdc06-v02.gdn.ge.com
+# # CSSyiMUSalpdc10a-v.gdn.ge.com
 
-[f5-cin]
-cssydmuscingh06-v01.gdn.ge.com
-cssydmuscingh06-v02.gdn.ge.com
-cssyimuscingh10a-v.gdn.ge.com
+# [f5_cin]
+# # cssydmuscingh06-v01.gdn.ge.com
+# # cssydmuscingh06-v02.gdn.ge.com
+# # cssyimuscingh10a-v.gdn.ge.com
 
 [forms:children]
-dev-forms
-stage-forms
-prod-forms
-prod-forms-https
+dev_forms
+stage_forms
+prod_forms
+prod_forms_https
 
 [jenkins:children]
-jenkins-masters
-jenkins-agents
+jenkins_masters
+jenkins_agents
 
-[jenkins-masters]
+[jenkins_masters]
 cihcispapp925.corporate.ge.com dns_entry=jenkins.dbt.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 cihcisdapp809v.corporate.ge.com dns_entry=stage.jenkins.dbt.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
 #jenkins.cloud.corporate.ge.com
 
-[jenkins-agents]
+[jenkins_agents]
 alpcispapp122v.corporate.ge.com
 alpcispapp121v.corporate.ge.com
 
@@ -293,24 +313,65 @@ alpcispapp121v.corporate.ge.com
 [gitlab]
 alpcispapp970v.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
 
-[cloud-gitlab-stage]
-10.228.193.88
+[cloud_gitlab_stage]
+# 10.228.193.88
 
-[cloud-gitlab-prod]
-10.228.200.5
+[cloud_gitlab_prod]
+# 10.228.200.5
 
-[cloud-gitlab:children]
-cloud-gitlab-stage
-cloud-gitlab-prod
+[cloud_gitlab:children]
+cloud_gitlab_stage
+cloud_gitlab_prod
 
-[dev-oneform-wf]
-cihcisdappa29v
+[dev_oneform_wf]
+cihcisdappa29v.corporate.ge.com
 
-[prod-myge]
-10.229.83.110
-10.229.84.196
-10.229.80.109
+[prod_myge]
+# 10.229.83.110
+# 10.229.84.196
+# 10.229.80.109
 
-[stage-myge]
-10.227.87.123
+[stage_myge]
+# 10.227.87.123
 
+[other]
+# alpcispapp432.corporate.ge.com
+alpcispapp651.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp652.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp653.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp684v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp704v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp710v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp730.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp731.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp732.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp733.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp761.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp762.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp763.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp764.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp765.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp766.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp767.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp768.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+alpcispapp835v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+# alpcisputl482v.corporate.ge.com
+# alpcisputl900v.corporate.ge.com
+# alpcisputl901v.corporate.ge.com
+alpcissapp888.corporate.ge.com ansible_python_interpreter=/usr/bin/python2.6
+cihcispapp691v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+cihcispweb909v.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+cihcissapp991.corporate.ge.com ansible_python_interpreter=/usr/bin/python26
+
+[libraries_2021]
+ALPCTS000002270.corporate.ge.com
+ALPCTS000002271.corporate.ge.com
+ALPCTS000002272.corporate.ge.com
+ALPCTS000002273.corporate.ge.com
+ALPCTS000002274.corporate.ge.com
+ALPCTS000002194.corporate.ge.com
+ALPCTS000002195.corporate.ge.com
+ALPCTS000002196.corporate.ge.com
+
+[siu]
+alpctspappa103c.corporate.ge.com
