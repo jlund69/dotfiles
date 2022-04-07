@@ -2,7 +2,7 @@
 	name = 212616315
 	email = john.lund@ge.com
 [core]
-	excludesfile = /Users/johnlund/.gitignore_global
+	excludesfile = /Users/$USER/.gitignore_global
 	editor = code
 [color]
 	ui = true
@@ -24,12 +24,12 @@
 	untracked = cyan
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL --output $MERGED
 	trustExitCode = true
 [commit]
-	template = /Users/johnlund/.stCommitMsg
+	template = /Users/$USER/.stCommitMsg
 [cola]
 	spellcheck = false
 [merge]
@@ -39,11 +39,10 @@
 	path = /usr/local/bin/kdiff3
 	guitool = kdiff3
 [difftool "kdiff3"]
-	path = /usr/local/bin/kdiff3	
+	path = /usr/local/bin/kdiff3
 [credential]
 	helper = osxkeychain
 	helper = !/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/bin/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /usr/local/Cellar/git-credential-manager/2.0.4_1/libexec/git-credential-manager-2.0.4.jar
-	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager-core
 [alias]
 	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
