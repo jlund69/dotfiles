@@ -1,11 +1,11 @@
-ln ./.ssh/config ~/.ssh/config
+ln `pwd`/.ssh/config ~/.ssh/config
 mkdir ~/etc/ansible
-ln ./etc/ansible/hosts ~/etc/ansible/hosts
-ln -s ./.scripts ~/.scripts
-ln ./.ansible.cfg ~/.ansible.cfg
-ln ./.bashrc ~/.bashrc
-ln ./.bash_profile ~/.bash_profile
-ln ./.autoenv_authorized ~/.autoenv_authorized
-ln ./.gitignore_global ~/.gitignore_global
-ln ./mysql.cnf ~/mysql.cnf
-ln -s ./Brewfile ~/Brewfile
+ln `pwd`/etc/ansible/hosts ~/etc/ansible/hosts
+ln -s `pwd`/.scripts ~/.scripts
+ln `pwd`/.ansible.cfg ~/.ansible.cfg
+ln `pwd`/.bashrc ~/.bashrc
+ln `pwd`/.bash_profile ~/.bash_profile
+ln `pwd`/.autoenv_authorized ~/.autoenv_authorized
+ln `pwd`/.gitignore_global ~/.gitignore_global
+ln `pwd`/mysql.cnf ~/mysql.cnf
+ln `pwd`/Brewfile ~/Brewfile
