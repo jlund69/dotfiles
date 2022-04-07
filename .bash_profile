@@ -184,6 +184,4 @@ done
 source /Users/$USER/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/togglegeix
 fi #end if $Interactive == 'true'
 
-# The next lines enable bash completion for scalr-ctl.
-export PATH=$PATH:/Users/$USER/Library/Python/2.7/bin
-eval "$(_SCALR_CTL_COMPLETE=source scalr-ctl)"
+# export PATH=$PATH:/Users/$USER/Library/Python/2.7/bin
