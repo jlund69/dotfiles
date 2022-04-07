@@ -113,7 +113,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 alias ls='ls -G'
 
 # aliases go here
-alias aws='/Users/johnlund/Library/Python/3.6/bin/aws'
+alias aws='/Users/$USER/Library/Python/3.6/bin/aws'
 alias ll='ls -FGlAhp'
 alias mkdir='mkdir -pv'
 alias less='less -FSRXc'
@@ -169,21 +169,21 @@ exit() {
 
 if $Interactive == 'true'; then
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-export PATH=$PATH:/Users/johnlund/bin
+export PATH=$PATH:/Users/$USER/bin
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 source ~/.scripts/tabFunc.sh
-#source '/Users/johnlund/lib/azure-cli/az.completion'
-source /Users/johnlund/lib/toggleproxy.sh
-for file in `find /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions -type f -name geix*`
+#source '/Users/$USER/lib/azure-cli/az.completion'
+source /Users/$USER/lib/toggleproxy.sh
+for file in `find /Users/$USER/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions -type f -name geix*`
 do
   source $file
 done
-source /Users/johnlund/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/togglegeix
+source /Users/$USER/git/cloud/DWT-DevOps/tools/terminal-tools/bash_profile/functions/togglegeix
 fi #end if $Interactive == 'true'
 
 # The next lines enable bash completion for scalr-ctl.
-export PATH=$PATH:/Users/johnlund/Library/Python/2.7/bin
+export PATH=$PATH:/Users/$USER/Library/Python/2.7/bin
 eval "$(_SCALR_CTL_COMPLETE=source scalr-ctl)"
