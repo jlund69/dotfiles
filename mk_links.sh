@@ -9,4 +9,5 @@ ln `pwd`/.autoenv_authorized ~/.autoenv_authorized
 ln `pwd`/.gitignore_global ~/.gitignore_global
 ln `pwd`/mysql.cnf ~/mysql.cnf
 ln `pwd`/Brewfile ~/Brewfile
+mkdir ~/lib
 ln `pwd`/lib/toggleproxy.sh
