@@ -138,6 +138,7 @@ brew "derailed/k9s/k9s"
 brew "gabrie30/utils/ghorg"
 brew "gitguardian/tap/ggshield"
 brew "glensc/git-mr/git-mr"
+cask "macfuse"
 brew "gromgit/fuse/sshfs-mac"
 brew "jakehilborn/jakehilborn/displayplacer"
 brew "rbenv/tap/openssl@1.0"
@@ -159,10 +160,10 @@ cask "github"
 cask "http-toolkit"
 cask "hyper"
 cask "inkscape"
-cask "jad"
-cask "java11"
+# cask "jad"
+# cask "java11"
 cask "kdiff3"
-cask "keybase"
+# cask "keybase"
 cask "keycastr"
 cask "lens"
 cask "macdown"
@@ -178,3 +179,28 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "wireshark"
 cask "zenmap"
+brew "docker"
+mas "Amphetamine", id: 937984704
+mas "Battery Monitor", id: 836505650
+mas "Be Focused", id: 973134470
+mas "Caffeinated", id: 1362171212
+mas "CopyClip", id: 595191960
+mas "CopyLess 2", id: 993841014
+mas "Desktop Clock", id: 894760156
+mas "Evernote", id: 406056744
+mas "Fantastical", id: 975937182
+mas "Ghostery Lite", id: 1436953057
+mas "Jira", id: 1475897096
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft Remote Desktop", id: 715768417
+mas "Microsoft To Do", id: 1274495053
+mas "Microsoft Word", id: 462054704
+mas "OneDrive", id: 823766827
+mas "Skitch", id: 425955336
+mas "Slack", id: 803453959
+mas "Todoist", id: 585829637
+mas "XnConvert", id: 436203431
