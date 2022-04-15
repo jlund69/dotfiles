@@ -9,6 +9,7 @@ tap "gromgit/fuse"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
+tap "homebrew/cask-drivers"
 tap "homebrew/core"
 tap "jakehilborn/jakehilborn"
 tap "microsoft/git"
@@ -179,7 +180,9 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "wireshark"
 cask "zenmap"
+cask "google-chrome-canary"
 brew "docker"
+cask "plantronics-hub"
 mas "Amphetamine", id: 937984704
 mas "Battery Monitor", id: 836505650
 mas "Be Focused", id: 973134470
@@ -189,10 +192,10 @@ mas "CopyLess 2", id: 993841014
 mas "Desktop Clock", id: 894760156
 mas "Evernote", id: 406056744
 mas "Fantastical", id: 975937182
-mas "Ghostery Lite", id: 1436953057
+# mas "Ghostery Lite", id: 1436953057
 mas "Jira", id: 1475897096
 mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
+# mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
@@ -203,4 +206,5 @@ mas "OneDrive", id: 823766827
 mas "Skitch", id: 425955336
 mas "Slack", id: 803453959
 mas "Todoist", id: 585829637
+mas "Xcode", id: 497799835
 mas "XnConvert", id: 436203431
