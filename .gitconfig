@@ -22,12 +22,18 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "kdiff3"]
+	path = /usr/local/bin/kdiff3
+[difftool "meld"]
+    cmd = meld $LOCAL $REMOTE
+	path = /usr/local/bin/meld
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
 	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL --output $MERGED
-	trustExitCode = true
 [commit]
 	template = /Users/$USER/.stCommitMsg
 [cola]
@@ -38,8 +44,14 @@
 [mergetool "kdiff3"]
 	path = /usr/local/bin/kdiff3
 	guitool = kdiff3
-[difftool "kdiff3"]
-	path = /usr/local/bin/kdiff3
+[mergetool "meld"]
+    # Choose one of these 2 lines (not both!) explained below.
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+	path = /usr/local/bin/meld
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL --output $MERGED
+	trustExitCode = true
 [credential]
 	helper = osxkeychain
 	helper = !/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/bin/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /usr/local/Cellar/git-credential-manager/2.0.4_1/libexec/git-credential-manager-2.0.4.jar
