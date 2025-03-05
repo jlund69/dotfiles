@@ -70,5 +70,7 @@
 [init]
 	templateDir = /Users/212616315/.git-template
 	defaultBranch = main
+[safe]
+	bareRepository = explicit
 [credential "https://dev.azure.com"]
 	useHttpPath = true
