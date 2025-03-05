@@ -1,0 +1,58 @@
+alias cd..='cd ../'              # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                # Go back 1 directory level
+alias ...='cd ../../'            # Go back 2 directory levels
+alias .3='cd ../../../'          # Go back 3 directory levels
+alias .4='cd ../../../../'       # Go back 4 directory levels
+alias .5='cd ../../../../../'    # Go back 5 directory levels
+alias .6='cd ../../../../../../' # Go back 6 directory levels
+
+alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
+alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
+alias DT='tee ~/Desktop/terminalOut.txt' # DT:           Pipe content to file on MacOS Desktop
+alias ~="cd ~"                           # ~:            Go Home
+alias f='open -a Finder ./'              # f:            Opens current directory in MacOS Finder
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+alias ls='ls -G'
+
+# aliases go here
+alias ll='ls -FGlAhp'
+alias mkdir='mkdir -pv'
+alias less='less -FSRXc'
+alias bbi='brew bundle install'
+# alias brew='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80 brew'
+alias rd='rdesktop -r scard -g 1280x800 -a 16 -z -P'
+alias myrs='rsync -varE --progress'
+alias addsbin='export PATH="/usr/local/sbin:$PATH"'
+alias usego='export PATH="$PATH:/usr/local/opt/go/libexec/bin"'
+alias useopenssl='export PATH="/usr/local/opt/openssl/bin:$PATH"'
+alias usecode='PATH="$PATH:~/Applications/Visual Studio Code.app/Contents/Resources/app/bin"'
+alias myproxy='ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
+alias httpproxy='http_proxy=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80'
+#alias sftp='with-readline sftp'
+alias tac='gtac'
+alias cdp='pushd'
+alias vault-login-corp="vault login -method=ldap -address=$CORP_VAULT_ADDR username=$GE_SSO_ID"
+alias vault-login="vault login -address=$VAULT_ADDR -method=oidc"
+alias ws='/Applications/Wireshark.app/Contents/MacOS/wireshark'
+alias wireshark='/Applications/Wireshark.app/Contents/MacOS/wireshark'
+##############
+# TF aliases #
+##############
+alias tf="terraform"
+alias tfi="terraform init"
+alias tfiu="terraform init -upgrade"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfpl="terraform providers lock -platform=windows_amd64 -platform=darwin_amd64 -platform=linux_amd64"
+alias tfc="terraform console"
+alias tfl="terraform state list"
+alias tfs="terraform state show"
+
+alias brewup="brew outdated | parallel -i brew fetch {} && brew upgrade"
+
+###############
+# K8S Aliases #
+###############
+alias k="kubectl"
+alias kr="kubectl krew"
+alias kpa="kubectl get pods -A"
