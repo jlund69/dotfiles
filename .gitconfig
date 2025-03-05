@@ -1,76 +1,76 @@
 [user]
-	name = 212616315
-	email = john.lund@ge.com
+name = 212616315
+email = john.lund@ge.com
 [core]
-	excludesfile = /Users/212616315/.gitignore_global
-	editor = code
+excludesfile = /Users/212616315/.gitignore_global
+editor = code
 [color]
-	ui = true
-	branch = auto
-	diff = auto
-	status = auto
+ui = true
+branch = auto
+diff = auto
+status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+current = yellow reverse
+local = yellow
+remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+meta = yellow bold
+frag = magenta bold
+old = red bold
+new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+added = yellow
+changed = green
+untracked = cyan
 [diff]
-    tool = meld
+tool = meld
 [difftool]
-    prompt = false
+prompt = false
 [difftool "kdiff3"]
-	path = /usr/local/bin/kdiff3
+path = /usr/local/bin/kdiff3
 [difftool "meld"]
-    cmd = meld $LOCAL $REMOTE
-	path = /usr/local/bin/meld
+cmd = meld $LOCAL $REMOTE
+path = /usr/local/bin/meld
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
-	path = 
+cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
+path =
 [commit]
-	template = /Users/212616315/.stCommitMsg
+template = /Users/212616315/.stCommitMsg
 [cola]
-	spellcheck = false
+spellcheck = false
 [merge]
-	tool = kdiff3
-	ff = true
-	conflictStyle = diff3
+tool = kdiff3
+ff = true
+conflictStyle = diff3
 [mergetool "kdiff3"]
-	path = /usr/local/bin/kdiff3
-	guitool = kdiff3
+path = /usr/local/bin/kdiff3
+guitool = kdiff3
 [mergetool "meld"]
-    # Choose one of these 2 lines (not both!) explained below.
-    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
-    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
-	path = /usr/local/bin/meld
+# Choose one of these 2 lines (not both!) explained below.
+cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+# cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+path = /usr/local/bin/meld
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
-	trustExitCode = true
+cmd = /usr/local/bin/meld $REMOTE $BASE $LOCAL
+trustExitCode = true
 [credential]
-	helper = osxkeychain
-	helper = !/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/bin/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /usr/local/Cellar/git-credential-manager/2.0.4_1/libexec/git-credential-manager-2.0.4.jar
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
+helper = osxkeychain
+helper = !/usr/local/Cellar/openjdk/13.0.2+8_2/libexec/openjdk.jdk/Contents/Home/bin/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /usr/local/Cellar/git-credential-manager/2.0.4_1/libexec/git-credential-manager-2.0.4.jar
+helper =
+helper = /usr/local/share/gcm-core/git-credential-manager
 [alias]
-	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 [protocol]
-	version = 2
+version = 2
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
 [init]
-	templateDir = /Users/212616315/.git-template
-	defaultBranch = main
+templateDir = /Users/212616315/.git-template
+defaultBranch = main
 [safe]
-	bareRepository = explicit
+bareRepository = explicit
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+useHttpPath = true
