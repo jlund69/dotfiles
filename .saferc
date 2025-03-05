@@ -1,0 +1,9 @@
+version: 1
+current: cloud
+vaults:
+  cloud:
+    url: https://vault.cloud.corporate.ge.com
+    token: ""
+    skip_verify: true
+options:
+  manage_vault_token: false
