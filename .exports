@@ -1,0 +1,25 @@
+## for AWS
+export AWS_CA_BUNDLE=$(brew --prefix)/etc/ca-certificates/cert.pem
+
+## export ENV settings
+export LSCOLORS="EHfxcxdxBxegecabagacad"
+export EDITOR=/usr/local/bin/code
+export BLOCKSIZE=1k
+export NVM_DIR="$HOME/.nvm"
+export SSO_ID='212616315'
+export CORP_VAULT_ADDR="https://dwt-vault.cloud.corporate.ge.com:443"
+export VAULT_ADDR="https://vault.dw.geaerospace.net:8200"
+export HOMEBREW_AUTO_UPDATE_SECS=7200
+
+# uncomment for external programs that need proxy access:
+#export ALL_PROXY=http://PITC-Zscaler-Americas-Cincinnati3PR.proxy.corporate.ge.com:80
+
+# MacPorts Installer addition on 2023-06-15_at_09:28:38: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# add krew to path
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Created by `pipx` on 2024-10-08 13:46:50
+export PATH="$PATH:/Users/212616315/.local/bin"
